@@ -12,7 +12,7 @@ function Home() {
         'fb': process.env.NEXT_APP_FACEBOOK_PROFILE_LINK,
         'linkedin': process.env.NEXT_APP_LINKED_IN_LINK,
         'github': process.env.NEXT_APP_GITHUB_LINK,
-    } as any
+    } as Record<string, string>
 
 
     const init = async () => {
