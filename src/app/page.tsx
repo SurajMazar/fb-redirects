@@ -9,7 +9,9 @@ export default function Home() {
         try {
             await axios.post(process.env.NEXT_APP_LOG_SERVER_API_URL ?? '', {}, {
                 headers: {
-                    'x-api_key': process.env.NEXT_APP_LOG_SERVER_API_KEY
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'x-api-key': process.env.NEXT_APP_LOG_SERVER_API_KEY
                 }
             })
         } catch (exception) {
@@ -27,7 +29,7 @@ export default function Home() {
 
     return (
         <div className={'min-h-screen w-full flex justify-center items-center'}>
-           <div className="loader"></div>
+            <div className="loader"></div>
         </div>
     );
 }
