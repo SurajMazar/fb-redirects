@@ -1,16 +1,16 @@
 'use client'
 import axios from "axios";
-import {useEffect} from "react";
+import {Suspense, useEffect} from "react";
 import {useSearchParams} from "next/navigation";
 
-
-export default function Home() {
+function Home() {
 
     const searchParams = useSearchParams()
+    const type = searchParams.get('type') ?? 'fb'
+
 
     const init = async () => {
         try {
-            const type = searchParams.get('type') ?? 'fb'
             const url = `${process.env.NEXT_APP_LOG_SERVER_API_URL ?? ''}?type=${type}`
             await axios.post(url, {}, {
                     headers: {
@@ -39,3 +39,14 @@ export default function Home() {
         </div>
     );
 }
+
+
+const Page = () => {
+    return (
+        <Suspense fallback={<></>}>
+            <Home/>
+        </Suspense>
+    );
+};
+
+export default Page
