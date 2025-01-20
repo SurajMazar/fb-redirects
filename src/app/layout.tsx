@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import './globals.css'
 export const metadata: Metadata = {
-  title: "Redirecting to facebook"
+  title: "Redirecting ..."
 };
 
 export default function RootLayout({
