@@ -8,6 +8,12 @@ function Home() {
     const searchParams = useSearchParams()
     const type = searchParams.get('type') ?? 'fb'
 
+    const redirectHashMap = {
+        'fb': process.env.NEXT_APP_FACEBOOK_PROFILE_LINK,
+        'linkedin': process.env.NEXT_APP_LINKED_IN_LINK,
+        'github': process.env.NEXT_APP_GITHUB_LINK,
+    } as any
+
 
     const init = async () => {
         try {
@@ -23,7 +29,7 @@ function Home() {
         } catch (exception) {
             console.log(exception)
         } finally {
-            window.location.replace(process.env.NEXT_APP_FACEBOOK_PROFILE_LINK ?? '')
+            window.location.replace(redirectHashMap?.[type ?? 'fb'])
         }
     }
 
