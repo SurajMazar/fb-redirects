@@ -15,3 +15,6 @@ C
 next.config.ts,a/0/a0c2fdd26b1bc645a7bf22a0e7259f42a915d5fa
 =
 next-env.d.ts,7/9/7948598afd6f2aa542f1b55d7b6f077a70937e77
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
